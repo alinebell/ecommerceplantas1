@@ -1,0 +1,37 @@
+<!--<h1>{{menu}}</h1>
+<h2>{{numero}}</h2>
+<p>{{ativo}}</p>
+<p>{{numeroComDecimais}}</p>
+<p>{{numero * numeroComDecimais}}</p>-->
+
+<h1>{{title}}</h1>
+
+<div>
+    <h1>Busca por descrição</h1>
+    <input type="text" class="input-busca" >
+</div>
+
+<app-productslist [productslist]="produtos"></app-productslist>
+<app-productslist [productslist]="produtosListaSuculentas"></app-productslist>
+<div class ="container">
+    <div *ngFor="let produto of produtos">
+        <img [src]="produto.img" height="250px" width="250px">
+        <p>Item: {{produto.nome}}</p>
+        <span>Preço: R$ {{produto.preco}}</span><br>
+        <span>Tamanho: {{produto.tamanho}}</span><br>
+        <input type=number>
+
+        <div class="action add to cart" (click)="addToCart()">
+            <button>Comprar</button>
+        </div>
+    </div>
+
+    <div *ngFor="let produto of produtosListaSuculentas">
+        <img [src]="produto.img" height="250px" width="250px">
+        <p>Item: {{produto.nome}}</p>
+        <span>Preço: R$ {{produto.preco}}</span><br>
+        <span>Tamanho: {{produto.tamanho}}</span><br>
+        <input type = number>
+        <button>Comprar</button>
+    </div>
+</div>
